@@ -221,8 +221,9 @@ body {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .phone {
-        width: 90%;
-        height: auto; /* Ensure it covers most of the screen */
+        width: 90%; /* Adjust width to fit mobile screens better */
+        height: auto; 
+        max-height: 100vh; 
     }
     
     .app {
@@ -242,8 +243,9 @@ body {
 
 @media (max-width: 480px) {
     .phone {
-        width: 90%;
-        height: auto; /* Ensure it covers most of the screen */
+        width: 100%; /* Adjust width to fit mobile screens better */
+        height: auto; 
+        max-height: 100vh; 
     }
     
     .app {
