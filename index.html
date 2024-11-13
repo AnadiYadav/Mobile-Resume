@@ -38,9 +38,9 @@
             </div>
             <p>Touch to Unlock</p>
             <div class="navigation-buttons">
-                <span>⬅️</span>
-                <span>🏠</span>
                 <span>⬜</span>
+                <span>🏠</span>
+                <span>⬅️</span>
             </div>
         </div>
     </div>
@@ -54,29 +54,38 @@
             document.getElementById('time').textContent = `${hours}:${minutes}`;
             document.getElementById('lock-time').textContent = `${hours}:${minutes}`;
         }
-
+    
         // Fetch battery status
         async function updateBattery() {
-            if ('getBattery' in navigator) {
-                const battery = await navigator.getBattery();
-                const level = Math.round(battery.level * 100);
-                document.getElementById('battery').textContent = `🔋 ${level}%`;
-            } else {
+            try {
+                if ('getBattery' in navigator) {
+                    const battery = await navigator.getBattery();
+                    const level = Math.round(battery.level * 100);
+                    document.getElementById('battery').textContent = `🔋 ${level}%`;
+                } else if (navigator.battery) {
+                    const battery = navigator.battery;
+                    const level = Math.round(battery.level * 100);
+                    document.getElementById('battery').textContent = `🔋 ${level}%`;
+                } else {
+                    document.getElementById('battery').textContent = '🔋 N/A';
+                }
+            } catch (error) {
                 document.getElementById('battery').textContent = '🔋 N/A';
             }
         }
-
+    
         // Update time every minute
         setInterval(updateTime, 60000);
         updateTime();
-
+    
         // Update battery status initially
         updateBattery();
-
+    
         const lockScreen = document.getElementById('lock-screen');
         lockScreen.addEventListener('click', function() {
             this.style.display = 'none';
         });
     </script>
+    
 </body>
 </html>
