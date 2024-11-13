@@ -9,8 +9,9 @@ body {
 }
 
 .phone {
-    width: 320px;
-    height: 640px;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
     background-color: #000; 
     border-radius: 30px;
     position: relative;
@@ -40,7 +41,8 @@ body {
 
 .screen {
     width: 90%;
-    height: 85%;
+    height: auto;
+    aspect-ratio: 320 / 640;
     background: linear-gradient(135deg, #FF5252, #FF4081, #FF80AB); 
     border-radius: 20px;
     margin: 8% auto;
@@ -222,7 +224,7 @@ body {
 @media (max-width: 768px) {
     .phone {
         width: 280px;
-        height: 560px;
+        height: auto;
     }
     
     .app {
@@ -243,7 +245,7 @@ body {
 @media (max-width: 480px) {
     .phone {
         width: 240px;
-        height: 480px;
+        height: auto;
     }
     
     .app {
