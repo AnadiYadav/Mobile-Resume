@@ -1,0 +1,262 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f3e5f5;
+    font-family: 'Arial', sans-serif;
+}
+
+.phone {
+    width: 320px;
+    height: 640px;
+    background-color: #000; 
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.phone::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: -20px;
+    background-color: #000;
+    border-radius: 20px 20px 0 0;
+}
+
+.phone::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: -20px;
+    background-color: #000;
+    border-radius: 0 0 20px 20px;
+}
+
+.screen {
+    width: 90%;
+    height: 85%;
+    background: linear-gradient(135deg, #FF5252, #FF4081, #FF80AB); 
+    border-radius: 20px;
+    margin: 8% auto;
+    text-align: center;
+    padding-top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: linear-gradient(135deg, #448AFF, #40C4FF, #18FFFF); 
+    padding-bottom: 100px;
+}
+
+.app-container .app {
+    margin-bottom: 20px;
+}
+
+.lock-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('https://th.bing.com/th?id=OIP.c0U1Y4DgOny6iqLmZO0EEQHaNK&w=187&h=333&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2');
+    background-size: cover;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.lock-screen p {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.notification-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #212121;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.navigation-buttons {
+    width: 100%;
+    height: 40px;
+    background-color: #212121;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.app {
+    margin: 20px 10px; 
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    width: 60px;
+    height: 60px; 
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.app:hover {
+    transform: translateY(-5px);
+}
+
+.app img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.app.facebook {
+    background: #f2f5f7; 
+}
+
+.app.contact {
+    background: #22eb08; 
+}
+
+.app.github {
+    background: #000000; 
+}
+
+.app.linkedin {
+    background: #2196F3; 
+}
+
+.app.email {
+    background: lightblue; 
+}
+
+.app.twitter {
+    background: #f2f5f7; 
+}
+
+.app.achievements {
+    background: #fbff07; 
+}
+
+.app.education {
+    background: #0703e0; 
+}
+
+.app.skills {
+    background: rgb(7, 3, 236); 
+}
+
+.app.certificates {
+    background: #e9e5e4; 
+}
+
+.app span {
+    display: block;
+    margin: 5px 0 10px;
+    font-size: 12px;
+    color: #333;
+    position: absolute;
+    width: 100%;
+    bottom: -25px; 
+    left: 0;
+    text-align: center;
+}
+
+.volume-buttons, .power-button {
+    position: absolute;
+    background-color: #78909c;
+    border-radius: 5px;
+}
+
+.volume-buttons {
+    width: 10px;
+    height: 60px;
+    left: -10px;
+    top: 80px;
+}
+
+.power-button {
+    width: 10px;
+    height: 40px;
+    right: -10px;
+    top: 140px;
+}
+
+.bottom-apps {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .phone {
+        width: 280px;
+        height: 560px;
+    }
+    
+    .app {
+        width: 50px;
+        height: 50px; 
+    }
+
+    .app img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .bottom-apps {
+        bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .phone {
+        width: 240px;
+        height: 480px;
+    }
+    
+    .app {
+        width: 45px;
+        height: 45px; 
+    }
+
+    .app img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .bottom-apps {
+        bottom: 20px;
+    }
+}

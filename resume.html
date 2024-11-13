@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone">
+        <div class="volume-buttons"></div>
+        <div class="power-button"></div>
+        <div class="screen" id="screen">
+            <div class="notification-bar">
+                <span id="signal">📶 LTE</span>
+                <span id="time"></span>
+                <span id="battery">🔋</span>
+            </div>
+            <div class="app-container">
+                <a href="tel:+919174989808" class="app contact"><img src="https://img.icons8.com/color/48/000000/phone.png" alt="Contact"><span>Contact</span></a>
+                <a href="skills.html" class="app skills"><img src="https://img.icons8.com/fluency/48/000000/laptop-coding.png" alt="Skills"><span>Skills</span></a>
+                <a href="https://www.linkedin.com/in/anadi-yadav-065499214/" class="app linkedin"><img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn"><span>LinkedIn</span></a>
+                <a href="mailto:anadiyadav33@gmail.com" class="app email"><img src="https://img.icons8.com/fluency/48/000000/new-post.png" alt="Email"><span>Email</span></a>
+                <a href="https://facebook.com/yourusername" class="app facebook"><img src="https://img.icons8.com/fluency/48/000000/facebook-new.png" alt="Facebook"><span>Facebook</span></a>
+                <a href="achievements.html" class="app achievements"><img src="https://img.icons8.com/color/48/000000/trophy.png" alt="Achievements"><span>Achievements</span></a>
+            </div>
+            <div class="bottom-apps">
+                <a href="education.html" class="app education"><img src="https://img.icons8.com/color/48/000000/school.png" alt="Education"><span>Education</span></a>
+                <a href="https://github.com/AnadiYadav" class="app github"><img src="https://img.icons8.com/fluent/48/000000/github.png" alt="GitHub"><span>GitHub</span></a>
+                <a href="certificates.html" class="app certificates"><img src="https://img.icons8.com/color/48/000000/certificate.png" alt="Certificates"><span>Certificates</span></a>
+            </div>
+        </div>
+        <div class="lock-screen" id="lock-screen">
+            <div class="notification-bar">
+                <span>📶 LTE</span>
+                <span id="lock-time"></span>
+                <span>🔋</span>
+            </div>
+            <p>Touch to Unlock</p>
+            <div class="navigation-buttons">
+                <span>⬅️</span>
+                <span>🏠</span>
+                <span>⬜</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update time
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('time').textContent = `${hours}:${minutes}`;
+            document.getElementById('lock-time').textContent = `${hours}:${minutes}`;
+        }
+
+        // Fetch battery status
+        async function updateBattery() {
+            if ('getBattery' in navigator) {
+                const battery = await navigator.getBattery();
+                const level = Math.round(battery.level * 100);
+                document.getElementById('battery').textContent = `🔋 ${level}%`;
+            } else {
+                document.getElementById('battery').textContent = '🔋 N/A';
+            }
+        }
+
+        // Update time every minute
+        setInterval(updateTime, 60000);
+        updateTime();
+
+        // Update battery status initially
+        updateBattery();
+
+        const lockScreen = document.getElementById('lock-screen');
+        lockScreen.addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
