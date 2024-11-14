@@ -59,9 +59,14 @@ body {
 }
 
 .app-container .app {
-    margin: 20px 10px;
-    width: calc((100% - 80px) / 3); /* Ensure 3 apps per row */
+    margin: 10px;
+    width: 60px; /* Keep original width */
+    height: 60px; /* Keep original height */
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .lock-screen {
@@ -223,13 +228,19 @@ body {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .app-container .app {
-        width: calc((100% - 40px) / 3); /* Ensure 3 apps per row */
+        width: 60px; /* Maintain original width */
+        height: 60px; /* Maintain original height */
     }
 }
 
 @media (max-width: 480px) {
     .app-container .app {
-        width: calc((100% - 40px) / 3); /* Ensure 3 apps per row */
+        width: 60px; /* Maintain original width */
+        height: 60px; /* Maintain original height */
+    }
+
+    .bottom-apps {
+        bottom: 30px; /* Adjust bottom apps to avoid overlap */
     }
 }
 
