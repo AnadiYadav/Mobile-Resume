@@ -231,6 +231,9 @@ body {
         width: 60px; /* Maintain original width */
         height: 60px; /* Maintain original height */
     }
+    .bottom-apps {
+        bottom: 10px; /* Adjust bottom apps to avoid overlap */
+    }
 }
 
 @media (max-width: 480px) {
@@ -240,7 +243,7 @@ body {
     }
 
     .bottom-apps {
-        bottom: 30px; /* Adjust bottom apps to avoid overlap */
+        bottom: 10px; /* Adjust bottom apps to avoid overlap */
     }
 }
 
