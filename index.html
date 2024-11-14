@@ -54,7 +54,7 @@
             document.getElementById('time').textContent = `${hours}:${minutes}`;
             document.getElementById('lock-time').textContent = `${hours}:${minutes}`;
         }
-    
+
         // Fetch battery status
         async function updateBattery() {
             try {
@@ -62,7 +62,7 @@
                     const battery = await navigator.getBattery();
                     const level = Math.round(battery.level * 100);
                     document.getElementById('battery').textContent = `🔋 ${level}%`;
-    
+
                     battery.addEventListener('levelchange', () => {
                         const level = Math.round(battery.level * 100);
                         document.getElementById('battery').textContent = `🔋 ${level}%`;
@@ -71,7 +71,7 @@
                     const battery = navigator.battery;
                     const level = Math.round(battery.level * 100);
                     document.getElementById('battery').textContent = `🔋 ${level}%`;
-    
+
                     battery.addEventListener('levelchange', () => {
                         const level = Math.round(battery.level * 100);
                         document.getElementById('battery').textContent = `🔋 ${level}%`;
@@ -83,7 +83,7 @@
                 document.getElementById('battery').textContent = '🔋 N/A';
             }
         }
-    
+
         // Open app within iframe
         function openApp(event, url) {
             event.preventDefault();
@@ -92,14 +92,14 @@
             appFrame.src = url;
             appFrame.style.display = 'block';
         }
-    
+
         // Update time every minute
         setInterval(updateTime, 60000);
         updateTime();
-    
+
         // Update battery status initially
         updateBattery();
-    
+
         const lockScreen = document.getElementById('lock-screen');
         lockScreen.addEventListener('click', function() {
             this.style.display = 'none';
