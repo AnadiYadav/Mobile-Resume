@@ -221,9 +221,8 @@ body {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .phone {
-        width: 90%; /* Adjust width to fit mobile screens better */
-        height: auto; 
-        max-height: 100vh; 
+        width: 320px;
+        height: 640px; /* Maintain original aspect ratio */
         border-radius: 30px; /* Ensure the border-radius is maintained */
     }
     
@@ -244,9 +243,8 @@ body {
 
 @media (max-width: 480px) {
     .phone {
-        width: 100%; /* Adjust width to fit mobile screens better */
-        height: auto; 
-        max-height: 100vh; 
+        width: 300px; /* Maintain original aspect ratio */
+        height: 600px; 
         border-radius: 30px; /* Ensure the border-radius is maintained */
     }
     
