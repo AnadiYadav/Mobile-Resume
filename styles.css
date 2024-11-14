@@ -224,6 +224,7 @@ body {
         width: 90%; /* Adjust width to fit mobile screens better */
         height: auto; 
         max-height: 100vh; 
+        border-radius: 30px; /* Ensure the border-radius is maintained */
     }
     
     .app {
@@ -246,6 +247,7 @@ body {
         width: 100%; /* Adjust width to fit mobile screens better */
         height: auto; 
         max-height: 100vh; 
+        border-radius: 30px; /* Ensure the border-radius is maintained */
     }
     
     .app {
