@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f3e5f5;
+    background-color: red;
     font-family: 'Arial', sans-serif;
 }
 
@@ -79,7 +79,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url('https://th.bing.com/th?id=OIP.c0U1Y4DgOny6iqLmZO0EEQHaNK&w=187&h=333&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2');
+    background-image: url('Boy\ Image\.jpeg');
     background-size: cover;
     color: #fff;
     cursor: pointer;
@@ -230,9 +230,6 @@ body {
     .app-container .app {
         width: 60px; /* Maintain original width */
         height: 60px; /* Maintain original height */
-    }
-    .bottom-apps {
-        bottom: 10px; /* Adjust bottom apps to avoid overlap */
     }
 }
 
