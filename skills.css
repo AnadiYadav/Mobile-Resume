@@ -8,26 +8,104 @@ body {
     align-items: center;
     height: 100vh;
     background-image: linear-gradient(to right, #6a11cb, #2575fc);
+    overflow: hidden; /* Prevents body scroll */
 }
 
-.container {
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 40px 20px; /* Increased padding to ensure visibility */
-    max-width: 800px;
+.phone {
+    width: 320px;
+    height: 640px;
+    background-color: #000; 
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.phone::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: -20px;
+    background-color: #000;
+    border-radius: 20px 20px 0 0;
+}
+
+.phone::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: -20px;
+    background-color: #000;
+    border-radius: 0 0 20px 20px;
+}
+
+.screen {
     width: 90%;
+    height: 85%;
+    background: linear-gradient(135deg, #FF5252, #FF4081, #FF80AB); 
+    border-radius: 20px;
+    margin: 8% auto;
     text-align: center;
-    margin-top: 60px; /* Further increased margin-top for additional spacing */
+    padding-top: 50px;
+    position: relative;
+    overflow: hidden; /* Prevents full screen scroll */
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #212121;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.back-button {
+    position: absolute;
+    top: 25px; /* Adjusted to be below the notification bar */
+    left: 10px;
+    background: none;
+    border: none;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.back-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #448AFF, #40C4FF, #18FFFF); 
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    flex: 1; /* Ensures it takes the remaining space */
+    overflow-y: auto; /* Enables vertical scrolling */
+    box-sizing: border-box;
 }
 
 h1 {
-    color: #333;
+    color: #fff;
     margin-bottom: 20px;
 }
 
 .section {
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .section h2 {
@@ -56,4 +134,24 @@ h1 {
     background-color: #ff6f61;
     color: #fff;
     transform: translateY(-5px);
+}
+
+.volume-buttons, .power-button {
+    position: absolute;
+    background-color: #78909c;
+    border-radius: 5px;
+}
+
+.volume-buttons {
+    width: 10px;
+    height: 60px;
+    left: -10px;
+    top: 80px;
+}
+
+.power-button {
+    width: 10px;
+    height: 40px;
+    right: -10px;
+    top: 140px;
 }
